@@ -1,0 +1,17 @@
+page{
+
+    includeJSLibs{
+        #jquery v3.3.1 min & fixed (feb.2019)
+        ool_jQuery = {$filepaths.js}jquery.min.js
+
+        #clipboard v2.0.0 min & fixed (feb.2019)
+        ool_clipboard = {$filepaths.js}clipboard.min.js
+
+        #tablesorter v2.31.1 min & fixed (feb.2019) -- depends on jQuery
+        ool_tablesorter = {$filepaths.js}tablesorter.min.js
+
+        #leaflet v1.4.0 fixed (feb.2019)
+        ool_leaflet = {$filepaths.js}leaflet.js
+    }
+
+}

@@ -1,0 +1,90 @@
+page {
+    # Regular pages always have typeNum = 0
+    typeNum = 0
+
+    # Add the icon that will appear in front of the url in the browser
+    # This icon will also be used for the bookmark menu in browsers
+    # <div>Icons made by <a href="https://www.flaticon.com/authors/iconnice" title="Iconnice">Iconnice</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    shortcutIcon = {$filepaths.icons}oolong.png
+
+    # Add class to bodytag to select which columns will be used in the HTML template
+    # Labels for the values used in this field are defined in the TSconfig field of the root page of the website
+    bodyTagCObject = CASE
+    bodyTagCObject {
+        # The value of the CASE object will depend on the value of the layout field in the page records
+        key.field = layout
+
+        # Define the default value
+        default = TEXT
+        default.value = <body class="ool">
+
+        # Copy the default value to 0
+        0 < .default
+    }
+
+    meta < meta
+    meta.X-UA-Compatible = IE=edge,chrome=1
+    meta.X-UA-Compatible.httpEquivalent = 1
+    meta.ROBOTS = NOINDEX, NOFOLLOW
+
+    # Fluid
+    10 = FLUIDTEMPLATE
+    10 {
+        partialRootPath = {$filepaths.htmlpartials}
+        layoutRootPath = {$filepaths.htmllayouts}
+
+        variables {
+            fr_CA = TEXT
+            fr_CA {
+                stdWrap.typolink {
+                    parameter.data = page:uid
+                    additionalParams = &L=0
+                    forceAbsoluteUrl = 1
+                    returnLast = url
+                }
+                if.value = {$language.alternate.fr_CA}
+                if.equals = 1
+            }
+        }
+
+        file.stdWrap.cObject = CASE
+        file.stdWrap.cObject {
+            key.data = levelfield:-1, backend_layout_next_level, slide
+            key.override.field = backend_layout
+
+            # Default Template
+            default = TEXT
+            default.value = {$filepaths.htmltemplates}Default.html
+
+            # The number equals the UID of the backend Layout:
+            #1 = TEXT
+            #1.value = {$filepaths.htmltemplates}fondbleu.html
+
+            #4 = TEXT
+            #4.value = {$filepaths.htmltemplates}menuprincipal.html
+   
+            #5 = TEXT
+            #5.value = {$filepaths.htmltemplates}souspages.html
+  
+            #6 = TEXT
+            #6.value = {$filepaths.htmltemplates}fondblanc.html
+        }
+    }
+
+}
+
+ajax = PAGE
+ajax {
+  typeNum = 666
+  10 < styles.content.get
+  config {
+    disableAllHeaderCode = 1
+    
+    xhtml_cleaning = 0
+    admPanel = 0
+    debug = 0
+    no_cache = 1
+  }
+}
+
+

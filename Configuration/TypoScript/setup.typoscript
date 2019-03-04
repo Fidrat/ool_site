@@ -1,0 +1,64 @@
+page = PAGE
+
+config {
+    adminPanel = {$config.adminPanel}
+    debug = {$config.debug}
+    language = {$config.language}
+    locale_all = {$config.locale_all}
+    htmlTag_langKey = {$config.htmlTag_langKey}
+    sys_language_uid = {$config.sys_language_uid}
+    compressJs = {$config.compressJs}
+    compressCss = {$config.compressCss}
+    concatenateJs  = {$config.concatenateJs}
+    concatenateCss = {$config.concatenateCss}
+    enableContentLengthHeader = {$config.enableContentLengthHeader}
+    doctype = {$config.doctype}
+    
+    // Language Settings
+    sys_language_mode = {$config.sys_language_mode}
+    sys_language_overlay = {$config.sys_language_overlay}
+    linkVars =  {$config.linkVars}
+    headerComment = {$config.headerComment}
+    #xmlprologue = {$config.xmlprologue}
+    removeDefaultJS = {$config.removeDefaultJS}
+    inlineStyle2TempFile = {$config.inlineStyle2TempFile}
+
+    // Code cleaning
+    disablePrefixComment = {$config.disablePrefixComment}
+
+    #############
+    # URL Setup #
+    #############
+    #tx_realurl_enable = {$config.tx_realurl_enable}
+    #simulateStaticDocuments = {$config.simulateStaticDocuments}
+    #typolinkCheckRootline = {$config.typolinkCheckRootline}
+    #typolinkEnableLinksAcrossDomains = {$config.typolinkEnableLinksAcrossDomains}
+    prefixLocalAnchors = {$config.prefixLocalAnchors}
+  
+
+    defaultGetVars {
+        L = 0
+    }
+
+
+    // Protect mail addresses from spamming
+    #spamProtectEmailAddresses = {$config.spamProtectEmailAddresses}
+    
+    # Default base URL based on the constant $lib.core.domain
+    # baseURL = https://{$lib.core.domain}/
+    index_enable = 1
+}
+
+# Domaine dev
+[globalVar=IENV:TYPO3_HOST_ONLY=localhost]
+config.baseURL = http://localhost
+[END]
+
+# Domaine staging -- does not seem to work yet TODO !
+[globalVar=IENV:TYPO3_HOST_ONLY=appelmoi.ca]
+config.baseURL = http://appelmoi.ca/
+[END]
+
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:ool_site/Configuration/TypoScript/includes.typoscript">
+

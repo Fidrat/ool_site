@@ -1,0 +1,15 @@
+page{
+    includeCSSLibs{
+        # mini css framework (responsive) : https://minicss.org/
+        # https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css
+        # ool_minicss = {$filepaths.css}minicss.min.css
+
+        # fontawesome v.5.7.2 all & fixed
+        ool_fontawesome = {$filepaths.css}fontawesome.all.css
+
+        # leaflet v1.4.0 fixed
+        ool_leaflet = {$filepaths.css}leaflet.css
+    }    
+
+    includeCSS.globalStyle = {$filepaths.css}global.css
+}

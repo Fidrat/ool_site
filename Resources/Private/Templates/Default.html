@@ -1,0 +1,46 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+	<f:section name="content">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-sm-12 border">
+                        
+                        <f:cObject typoscriptObjectPath="lib.mainmenu" />
+                        
+                    <f:comment> MINICSS : SEE DRAWER MENU - work in progress
+                        <label for="drawer-control" class="drawer-toggle"></label>
+                        <input type="checkbox" id="drawer-control" class="drawer">
+                        
+                        <div class="row">
+                          <label for="drawer-control" class="drawer-close"></label>
+                          <f:cObject typoscriptObjectPath="lib.mainmenu" />
+                        </div>
+                    </f:comment>
+                        
+                        <f:comment><f:cObject typoscriptObjectPath="lib.dynamicContent" data="3" /></f:comment>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6 left">
+                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="1" />
+                    </div>    
+         
+                    <div class="col-sm-6 right">
+                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="2" />
+                    </div>
+                </div>
+                
+                <div class="row center">
+                    <div class="col-sm-12">
+                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="0" />
+                    </div>
+                </div>
+                
+                
+                
+            </div><!-- container END  -->
+	</f:section>
+</html>

@@ -1,0 +1,28 @@
+{
+    "name": "oolong/ool-site",
+    "type": "typo3-cms-extension",
+    "description": "Sitewide Typo3 configuration extension",
+    "authors": [
+        {
+            "name": "Fari",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Oolong\\OolSite\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Oolong\\OolSite\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "ool_site": "self.version",
+        "typo3-ter/ool-site": "self.version"
+    }
+}

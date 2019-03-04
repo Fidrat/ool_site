@@ -1,0 +1,58 @@
+body{
+   
+}
+
+/** Helpers **/
+.no-border{
+    border: none;
+}
+
+/** Main menu style 
+* https://css-tricks.com/centering-list-items-horizontally-slightly-trickier-than-you-might-think/
+Update April 2013: This article is pretty old. This isn't very hard. 
+Just give the list centered text (e.g. ul.nav { text-align: center; }) 
+and the list items inline-block (e.g. ul.nav li { display: inline-block; }). 
+If you want to do it with margin for whatever reason, look into width: fit-content;.
+**/
+
+.main-menu-nav{
+    border: none;   
+}
+
+.main-menu-nav ul.lvl1{
+    display: flex;
+}
+
+.main-menu-nav ul.lvl1 ul{
+    display: none;
+}
+
+.main-menu-nav ul.lvl1 li.ACT:hover ul{
+    display: inline-grid;
+}
+
+ul.main-submenu {
+    display: inline-grid;
+    position: absolute;
+    background-color: var(--secondary-back-color);
+}
+
+.main-menu{
+    /* text-align: center; */
+}
+
+.main-menu-item{
+    display: inline-block; 
+}
+
+.main-menu-item.ACT a i{
+    background-color:var(--secondary-back-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/** Page title (header conflict with minicss) **/
+header{
+    overflow: visible;
+}
+

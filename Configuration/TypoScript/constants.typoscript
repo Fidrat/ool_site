@@ -1,0 +1,116 @@
+plugin.tx_oolsite{
+    isActive = 1
+}
+
+filepaths {
+    # Location of the global fluid templates relative to site
+    htmltemplates = typo3conf/ext/ool_site/Resources/Private/Templates/
+
+    # Location of the global fluid layouts relative to site
+    htmllayouts = typo3conf/ext/ool_site/Resources/Private/Layouts/
+
+    # Location of the global fluid partials relative to site
+    htmlpartials = typo3conf/ext/ool_site/Resources/Private/Partials/
+ 
+    # Location of the global fluid partials relative to site
+    icons = typo3conf/ext/ool_site/Resources/Public/Icons/
+
+    # Location of the global fluid partials relative to site
+    js = typo3conf/ext/ool_site/Resources/Public/Js/
+
+    # Location of the global fluid partials relative to site
+    css = typo3conf/ext/ool_site/Resources/Public/Css/
+
+    # Location of the global typoscript relative to site
+    typoscript = typo3conf/ext/ool_site/Configuration/TypoScript/
+}
+
+config {
+    # Turn on admin panel (dev only)
+    adminPanel = 0
+
+    # Turn on debugging (dev only)
+    debug = 0
+
+    language = en
+
+    locale_all = en_US.utf8
+
+    htmlTag_langKey = en
+    
+    sys_language_uid = 0
+
+    compressJs = 0
+
+    compressCss = 0
+
+    concatenateJs = 0
+
+    concatenateCss = 0
+
+    enableContentLengthHeader = 0
+    
+    doctype = html5
+    
+    # Language Settings
+    # options[default,content_fallback,strict,ignore]
+    sys_language_mode = content_fallback
+
+    sys_language_overlay = 1
+    
+    linkVars =  L
+
+    headerComment = Typo3 WebSite
+
+    removeDefaultJS = 0
+    
+    # The default CSS is put in an external file
+    inlineStyle2TempFile = 1
+
+    // Code cleaning
+    disablePrefixComment = 1
+
+    #############
+    # URL Setup #
+    #############
+    # Enable RealURL (speaking URL path segments)
+    #tx_realurl_enable = 1
+
+    #simulateStaticDocuments = 0
+
+    # This tells TYPO3 to check the rootline when creating a link and assign the correct domain. This is necessary for multi-domain websites.
+    #typolinkCheckRootline = 1
+
+    # This tells TYPO3 to enables to create links accros domains using current domain's linking scheme. This is necessary for multi-domain websites. If set, typolinkCheckRootline is automatically setted.
+    # cat=config; type=boolean;; label=typolinkEnableLinksAcrossDomains
+    #typolinkEnableLinksAcrossDomains = 1
+    
+    # Need for baseURL
+    prefixLocalAnchors = all
+}
+
+core {
+    sitename = Oolong SandBox
+    domain = appelmoi.ca
+}
+
+lib.core.domain < core.domain
+
+# Anglais
+[globalVar = GP:L = 1]
+config.sys_language_uid = 1
+config.language = fr
+config.locale_all = fr_CA.utf8
+page.config.language = fr
+config.htmlTag_langKey = fr
+[GLOBAL]
+
+# Domaine dev
+[globalVar=IENV:TYPO3_HOST_ONLY=localhost]
+site.baseURL = http://localhost
+[END]
+
+#Domaine Staging
+[globalVar=IENV:TYPO3_HOST_ONLY=appelmoi.ca]
+site.baseURL = http://appelmoi.ca
+[END]
