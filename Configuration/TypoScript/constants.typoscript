@@ -114,3 +114,7 @@ site.baseURL = http://localhost
 [globalVar=IENV:TYPO3_HOST_ONLY=appelmoi.ca]
 site.baseURL = http://appelmoi.ca
 [END]
+
+
+# EXT override
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:ool_site/Configuration/TypoScript/ext/bootstrap_package/constants.typoscript">
